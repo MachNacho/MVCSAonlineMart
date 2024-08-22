@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using SAonlineMart.Data;
+using SAonlineMart.Interfaces;
+using SAonlineMart.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IProductRepository, ProductRepository>();//added repository 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBcontext>(Options => { Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });
 var app = builder.Build();

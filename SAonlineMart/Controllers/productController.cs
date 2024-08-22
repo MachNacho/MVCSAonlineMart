@@ -1,21 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SAonlineMart.Data;
+using SAonlineMart.Interfaces;
 using SAonlineMart.Models;
 
 namespace SAonlineMart.Controllers
 {
     public class productController : Controller
     {
-        private readonly ApplicationDBcontext _context;
-        public productController(ApplicationDBcontext context) { _context = context; }
-        public IActionResult Index()
+        private readonly IProductRepository _productRepository;
+        public productController(IProductRepository productRepository) { _productRepository = productRepository; }
+        public async Task<IActionResult> Index()
         {
-            var products = _context.product.ToList();
+            IEnumerable<Product> products = await _productRepository.GetALL();
             return View(products);
         }
 
-        public IActionResult Details(int id) { 
-            Product products = _context.product.FirstOrDefault(c =>c.ID==id);
+        public async Task<IActionResult> Details(int id) { 
+            Product products =await _productRepository.GetByIdAsync(id);
             return View(products);
         }
     }

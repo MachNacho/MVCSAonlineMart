@@ -8,6 +8,7 @@
         Food,
         Drinks,
         Accessory,
-        Technology
+        Technology,
+        Fashion
     }
 }

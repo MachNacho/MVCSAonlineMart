@@ -19,6 +19,5 @@ namespace SAonlineMart.Models
         [DataType(DataType.Date)]
         public DateTime ProdcutUpload { get; set; } = DateTime.Now;
         public string imageURL { get; set; } 
-        //public List<User_Cart>? CartItems { get; set; }
     }
 }

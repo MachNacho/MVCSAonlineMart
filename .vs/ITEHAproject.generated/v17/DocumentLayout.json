@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\data\\enum\\productcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\data\\enum\\productcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FED5D83-113B-4B1D-BD0B-087682C747E3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FED5D83-113B-4B1D-BD0B-087682C747E3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9FED5D83-113B-4B1D-BD0B-087682C747E3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FED5D83-113B-4B1D-BD0B-087682C747E3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A340F4-250F-4537-93C8-34C6F5A5ED58}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FED5D83-113B-4B1D-BD0B-087682C747E3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FED5D83-113B-4B1D-BD0B-087682C747E3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +21,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 110,
+          "DockedWidth": 125,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -35,53 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductCategory.cs",
-              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Data\\Enum\\ProductCategory.cs",
-              "RelativeDocumentMoniker": "SAonlineMart\\Data\\Enum\\ProductCategory.cs",
-              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Data\\Enum\\ProductCategory.cs",
-              "RelativeToolTip": "SAonlineMart\\Data\\Enum\\ProductCategory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "SAonlineMart\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "SAonlineMart\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T21:33:34.084Z",
+              "WhenOpened": "2024-08-22T09:27:27.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\product\\Details.cshtml",
-              "RelativeDocumentMoniker": "SAonlineMart\\Views\\product\\Details.cshtml",
-              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\product\\Details.cshtml",
-              "RelativeToolTip": "SAonlineMart\\Views\\product\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-21T20:51:59.458Z",
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "SAonlineMart\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "SAonlineMart\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T09:27:22.096Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\product\\Index.cshtml",
-              "RelativeDocumentMoniker": "SAonlineMart\\Views\\product\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\product\\Index.cshtml",
-              "RelativeToolTip": "SAonlineMart\\Views\\product\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-21T20:02:27.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "productController.cs",
               "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Controllers\\productController.cs",
               "RelativeDocumentMoniker": "SAonlineMart\\Controllers\\productController.cs",
               "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Controllers\\productController.cs",
               "RelativeToolTip": "SAonlineMart\\Controllers\\productController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T19:27:07.368Z",
+              "WhenOpened": "2024-08-22T09:27:14.551Z",
               "EditorCaption": ""
             }
           ]
