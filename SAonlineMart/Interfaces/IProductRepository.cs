@@ -10,6 +10,7 @@ namespace SAonlineMart.Interfaces
     public interface IProductRepository
     {
         Task<IEnumerable<Product>> GetALL();
+        Task<IEnumerable<Product>> GetALLbyDate();
         Task<Product> GetByIdAsync(int id);
         Task<IEnumerable<Product>> GetProductsByCategory(ProductCategory Category);
         bool Add(Product product);

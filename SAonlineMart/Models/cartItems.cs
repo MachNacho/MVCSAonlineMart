@@ -8,9 +8,9 @@ namespace SAonlineMart.Models
     {
         [Key]
         public int Id { get; set; }
-        [ForeignKey("Customer")]
-        public int customerID { get; set; }
-        public Customer customer { get; set; }
+		[ForeignKey("customer")]
+        public string? customerID { get; set; }
+		public Customer customer { get; set; }
         [ForeignKey("Product")]
         public int productID { get; set; }
         public Product product { get; set; } 

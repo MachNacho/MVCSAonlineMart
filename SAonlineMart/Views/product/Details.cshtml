@@ -7,21 +7,19 @@
             <h6 class="card-subtitle">@Model.productCategory</h6>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-6">
-                    <div class="white-box text-center"><img src="@Model.imageURL" class="img-responsive"></div>
+                    <div class="white-box text-center"><img src="@Model.imageURL" style ="width:50%" ></div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-6">
-                    <h4 class="box-title mt-5">Product description</h4>
-                    <p>@Model.productDescription</p>
+                    <h4 class="box-title mt-5">Product description:</h4>
+                    <textarea style="width: 100%;height:400px" readonly>@Model.productDescription</textarea>
                     <h2 class="mt-5">
                         R @Model.productPrice
                     </h2>
-                    <div data-mdb-input-init class="form-outline" style="width: 22rem; padding:10px 0">
-                        <label class="form-label" for="typeNumber">Quantity</label>
-                        <input min="1" max="20" value ="1"type="number" id="typeNumber" class="form-control" />     
-                        
+                    <div data-mdb-input-init class="form-outline" style="width: 100%; padding:10px 0">
+                        <label class="form-label"for="typeNumber">Quantity</label>
+                        <input min="1" max="20" value ="1"type="number" style="width: 80%; id="typeNumber" class="form-control" />                          
                     </div>
                     <a class="btn btn-primary btn-rounded">Add to Cart</a>
-                    <h3 class="box-title mt-5">@Model.productCategory</h3>
                 </div>
             </div>
         </div>

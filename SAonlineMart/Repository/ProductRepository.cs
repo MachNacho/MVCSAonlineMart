@@ -14,6 +14,11 @@ namespace SAonlineMart.Repository
         {
             return await _context.product.ToListAsync();
         }
+        public async Task<IEnumerable<Product>> GetALLbyDate() //retirive all records
+        {
+            return await _context.product.OrderBy(X=>X.ProdcutUpload).ToListAsync();
+        }
+
         public async Task<Product> GetByIdAsync(int id) //for details page
         {
             return await _context.product.FirstOrDefaultAsync(c => c.ID == id);
@@ -22,6 +27,7 @@ namespace SAonlineMart.Repository
         {
             return await _context.product.Where(c => c.productCategory==Category).ToListAsync();
         }
+
         public bool Add(Product product)
         {
             _context.Add(product);

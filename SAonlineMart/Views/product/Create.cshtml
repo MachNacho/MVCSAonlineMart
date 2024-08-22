@@ -1,0 +1,34 @@
+﻿@model Product
+@using SAonlineMart.Data.Enum
+<form method="post" asp-action="Create">
+	<div class="form-group">
+		<label asp-for="productName">Product name</label>
+		<input asp-for="productName" class="form-control" placeholder="Your awesome products name" />
+		<span asp-validation-for="productName" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="productDescription">Product description</label>
+		<textarea asp-for="productDescription" class="form-control" placeholder="Tells us about your product"></textarea>
+		<span asp-validation-for="productDescription" class=" text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="productCategory">Product category</label>
+		<select asp-for="productCategory" asp-items="@Html.GetEnumSelectList<ProductCategory>()" class="form-control">
+			<option>--Select--</option>
+        </select>
+		<span asp-validation-for="productCategory" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="productPrice">Product price</label>
+		<input asp-for = "productPrice" class="form-control" placeholder="How much are we...uh I mean, you making?"/>
+		<span asp-validation-for="productPrice" class=" text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="imageURL">image</label>
+		<input asp-for="imageURL" class="form-control" placeholder="A cute pic of the product for the public :)" />
+		<span asp-validation-for="imageURL" class=" text-danger"></span>
+	</div>
+	<div class="form-group" style="padding:10px 0">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>

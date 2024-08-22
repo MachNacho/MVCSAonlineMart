@@ -14,10 +14,25 @@ namespace SAonlineMart.Controllers
             IEnumerable<Product> products = await _productRepository.GetALL();
             return View(products);
         }
-
         public async Task<IActionResult> Details(int id) { 
             Product products =await _productRepository.GetByIdAsync(id);
             return View(products);
+        }
+
+        public IActionResult Create()
+        {
+			return View();
+		}
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Product product) 
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(product);
+            }
+            _productRepository.Add(product);
+            return RedirectToAction("Index");
         }
     }
 }

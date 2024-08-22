@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SAonlineMart.Models;
 
 namespace SAonlineMart.Data
 {
-    public class ApplicationDBcontext: DbContext
+	public class ApplicationDBcontext : IdentityDbContext<Customer>
     {
         public ApplicationDBcontext(DbContextOptions<ApplicationDBcontext> Options):base(Options)
         {

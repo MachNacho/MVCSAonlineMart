@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SAonlineMart.Models
 {
-    public class Customer
+    public class Customer: IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
         public string FirstName { get; set; }
+        public string LaststName { get; set; }
+        public DateOnly birthDay { get; set; }
         public ICollection<Order> Orders { get; set; } = new List<Order>();
         public ICollection<cartItems> cartItems { get; set; } = new List<cartItems>();
     }
