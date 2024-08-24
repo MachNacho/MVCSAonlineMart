@@ -1,8 +1,8 @@
 ﻿@model Product;
 
-<div class="container" width="30%">
-    <div class="card" >
-        <div class="card-body">
+<div class="container" >
+    <div class="card">
+        <div class="card-body" >
             <h3 class="card-title">@Model.productName</h3>
             <h6 class="card-subtitle">@Model.productCategory</h6>
             <div class="row">
@@ -14,12 +14,16 @@
                     <textarea style="width: 100%;height:400px" readonly>@Model.productDescription</textarea>
                     <h2 class="mt-5">
                         R @Model.productPrice
-                    </h2>
-                    <div data-mdb-input-init class="form-outline" style="width: 100%; padding:10px 0">
-                        <label class="form-label"for="typeNumber">Quantity</label>
-                        <input min="1" max="20" value ="1"type="number" style="width: 80%; id="typeNumber" class="form-control" />                          
-                    </div>
-                    <a class="btn btn-primary btn-rounded">Add to Cart</a>
+                    </h2>               
+                    @using (Html.BeginForm("Add", "Cart", FormMethod.Post))
+                    {
+                        <div data-mdb-input-init class="form-outline" style="width: 100%; padding:10px 0">
+                        <input type="hidden" name="productId" value="@Model.ID" />
+                            <label class="form-label" for="quantity"> Quantity:</label>
+                        <input type="number" name="quantity" value="1" min="1" />
+                        <button type="submit" class="btn btn-primary btn-rounded" >Add to Cart</button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

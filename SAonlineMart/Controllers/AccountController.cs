@@ -34,7 +34,7 @@ namespace SAonlineMart.Controllers
 				var PasswordCheck = await _userManager.CheckPasswordAsync(user, model.Password);
 				if (PasswordCheck)
 				{
-					var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
+					var result = await _signInManager.PasswordSignInAsync(user, model.Password, false,false);
 					if (result.Succeeded)
 					{
 						return RedirectToAction("Index","Product");
@@ -59,6 +59,9 @@ namespace SAonlineMart.Controllers
 			}
 			var newcustomer = new Customer()
 			{
+				FirstName = model.Firstname,
+				LaststName = model.Lastname,
+				birthDay = model.birthday,
 				Email = model.EmailAddress,
 				UserName = model.EmailAddress
 			};
@@ -67,7 +70,7 @@ namespace SAonlineMart.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
-		[HttpPost]
+		[HttpGet]
 		public async Task<IActionResult> Logout() 
 		{
 			await _signInManager.SignOutAsync();

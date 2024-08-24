@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using SAonlineMart.Data;
 using SAonlineMart.Interfaces;
 using SAonlineMart.Models;
@@ -21,8 +22,9 @@ namespace SAonlineMart.Controllers
 
         public IActionResult Create()
         {
-			return View();
-		}
+            if (User.IsInRole("admin")) { return View(); }
+            return RedirectToAction("Index");           
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create(Product product) 

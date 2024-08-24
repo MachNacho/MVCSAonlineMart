@@ -141,3 +141,11 @@ C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.AspN
 C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Owin.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Owin.Security.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Owin.Security.Cookies.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Microsoft.Owin.Security.OAuth.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\asiph\Desktop\ITEHAproject\SAonlineMart\bin\Debug\net8.0\Owin.dll
