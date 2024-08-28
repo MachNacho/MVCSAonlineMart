@@ -35,7 +35,8 @@ namespace SAonlineMart.Repository
         }
         public bool Update(Product product)
         {
-            throw new NotImplementedException();
+            _context.Update(product);
+            return Save();
         }
         public bool Delete(Product product)
         {

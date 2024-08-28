@@ -13,5 +13,6 @@ namespace SAonlineMart.Data
         public DbSet<Customer> customer  { get; set; }
         public DbSet<Order> order { get; set; }
         public DbSet<cartItems> cartitems { get; set; }
+        public DbSet<OrderItems> orderItems { get; set; }
     }
 }

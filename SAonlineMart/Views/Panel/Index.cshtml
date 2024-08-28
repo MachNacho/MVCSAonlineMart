@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Product>
+<h1>Admin panel</h1>
+<a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Create">Create new Products</a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Delete">Delete Products</a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="">View Products</a>
+
+<form method="get" asp-controller="Product" asp-action="Update">
+	<select class="form-control" name="id" id="id" style="width:50%">
+		@foreach (var item in Model)
+		{
+			<option value="@item.ID">--@item.ID - @item.productName--</option>
+		}
+	</select>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -9,16 +9,16 @@ namespace SAonlineMart.Controllers
 {
 	public class AccountController : Controller
 	{
-		private readonly UserManager<Customer> _userManager;
-		private readonly SignInManager<Customer> _signInManager;
-		private readonly ApplicationDBcontext _context;
-		public AccountController(UserManager<Customer> userManager,SignInManager<Customer> signInManager, ApplicationDBcontext context)
-		{
-			_context = context;
-			_userManager = userManager;
-			_signInManager = signInManager;
-		}
-		public IActionResult Login()//used for showing page
+        private readonly UserManager<Customer> _userManager;
+        private readonly SignInManager<Customer> _signInManager;
+        private readonly ApplicationDBcontext _context;
+        public AccountController(UserManager<Customer> userManager, SignInManager<Customer> signInManager, ApplicationDBcontext context)
+        {
+            _context = context;
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+        public IActionResult Login()//used for showing page
 		{
 			var response = new LoginViewModel();
 			return View(response);
@@ -34,7 +34,7 @@ namespace SAonlineMart.Controllers
 				var PasswordCheck = await _userManager.CheckPasswordAsync(user, model.Password);
 				if (PasswordCheck)
 				{
-					var result = await _signInManager.PasswordSignInAsync(user, model.Password, false,false);
+					var result = await _signInManager.PasswordSignInAsync(user, model.Password, true,false);
 					if (result.Succeeded)
 					{
 						return RedirectToAction("Index","Product");
@@ -63,11 +63,11 @@ namespace SAonlineMart.Controllers
 				LaststName = model.Lastname,
 				birthDay = model.birthday,
 				Email = model.EmailAddress,
-				UserName = model.EmailAddress
+				UserName = $"{model.Firstname}_{model.Lastname}"
 			};
 			var newUserResponse = await _userManager.CreateAsync(newcustomer,model.Password);//create user
 			if (newUserResponse.Succeeded) { await _userManager.AddToRoleAsync(newcustomer, UserRoles.User); }//add a role
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Login", "Account");
 		}
 
 		[HttpGet]

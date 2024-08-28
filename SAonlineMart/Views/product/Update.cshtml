@@ -1,0 +1,38 @@
+﻿@using SAonlineMart.ViewModels
+@using SAonlineMart.Data.Enum
+@model ProductViewModel
+
+<form method="post" asp-action="update" enctype="multipart/form-data">
+	<input asp-for="id" type="hidden" class="form-control" />
+	<div class="form-group">
+		<label asp-for="productName">Name</label>
+		<input asp-for="productName" class="form-control" placeholder="product name" />
+		<span asp-validation-for="productName" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="productDescription">Description</label>
+		<textarea asp-for="productDescription" class="form-control" placeholder="Description" style="width: 100%;height:400px"></textarea>
+		<span asp-validation-for="productDescription" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="productPrice">Price</label>
+		<input asp-for="productPrice" class="form-control" placeholder="Price" />
+		<span asp-validation-for="productPrice" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="productCategory">Product Category</label>
+		<select asp-for="productCategory" asp-items="@Html.GetEnumSelectList<ProductCategory>()" class="form-control">
+			<option selected="selected" value="">--Select--</option>
+		</select>
+		<span asp-validation-for="productCategory" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="imageURL">imageURL</label>
+		<input asp-for="imageURL" class="form-control" placeholder="imageURL" />
+		<span asp-validation-for="imageURL" class="text-danger"></span>
+	</div>
+	<div class="form-group" style="padding:10px 0">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>

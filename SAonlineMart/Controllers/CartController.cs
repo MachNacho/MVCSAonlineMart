@@ -4,48 +4,60 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using SAonlineMart.Data;
+using SAonlineMart.Interfaces;
 using SAonlineMart.Models;
+using SAonlineMart.Repository;
+
 
 namespace SAonlineMart.Controllers
 {
+    //TODO: REPOSITORY FOR THIS CONTROLLER
     public class CartController : Controller
     {
-
-        private readonly ApplicationDBcontext _context;
-        public CartController(ApplicationDBcontext context)
+        private readonly ICartRepository _cartRepository;
+        public CartController(ICartRepository cartRepository)
         {
-            _context = context;
+            _cartRepository = cartRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var cart = _context.cartitems.Include(a => a.product).ToList().Where(x=>x.customerID == User.Identity.GetUserId());
-            return View(cart);
+            IEnumerable<cartItems> cartItems = await _cartRepository.GetAll();
+            return View(cartItems.Where(x => x.customerID == User.Identity.GetUserId()));
         }
 
         [HttpPost]
-        public IActionResult Add(int productId, int quantity) 
+        public IActionResult Add(int productId) 
         {
-            var CI = _context.cartitems.FirstOrDefault(x => x.customerID == User.Identity.GetUserId() && x.productID == productId);
-            if (CI == null) 
-            {
-                _context.cartitems.Add(new cartItems { customerID = User.Identity.GetUserId(), productID = productId, quantity = quantity });
-                _context.SaveChanges();
-            }
+            _cartRepository.Add(productId, User.Identity.GetUserId());
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult MinusOne(int id) //minus one from cart item
+        {
+
+            _cartRepository.MinusOne(id);
+            return RedirectToAction("Index");
+
+        }
+        [HttpPost]
+        public IActionResult PlusOne(int id)//plus one from cart item
+        {
+            _cartRepository.PlusOne(id);
+            return RedirectToAction("Index");
+        }
         [HttpPost]
         public IActionResult Remove(int id)
         {
-            cartItems cart = _context.cartitems.FirstOrDefault(c => c.Id == id);
-            _context.cartitems.Remove(cart);
-            _context.SaveChanges();
+            _cartRepository.RemoveOne(id);
             return RedirectToAction("Index");
         }
-        //[HttpPost]
-        //public IActionResult Add(int productID) 
-        //{
-        //}
+        [HttpGet]
+        public IActionResult RemoveAll()
+        {
+            _cartRepository.RemoveALL(User.Identity.GetUserId());
+            return RedirectToAction("Index");
+        }
     }
 }

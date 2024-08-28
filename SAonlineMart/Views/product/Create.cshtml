@@ -3,12 +3,12 @@
 <form method="post" asp-action="Create">
 	<div class="form-group">
 		<label asp-for="productName">Product name</label>
-		<input asp-for="productName" class="form-control" placeholder="Your awesome products name" />
+		<input asp-for="productName" maxlength="60" class="form-control" placeholder="Your awesome products name" />
 		<span asp-validation-for="productName" class="text-danger"></span>
 	</div>
 	<div class="form-group">
 		<label asp-for="productDescription">Product description</label>
-		<textarea asp-for="productDescription" class="form-control" placeholder="Tells us about your product"></textarea>
+		<textarea asp-for="productDescription" class="form-control" placeholder="Tells us about your product" style="width: 100%;height:400px"></textarea>
 		<span asp-validation-for="productDescription" class=" text-danger"></span>
 	</div>
 	<div class="form-group">

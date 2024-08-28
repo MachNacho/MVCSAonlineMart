@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IProductRepository, ProductRepository>();//added repository 
+builder.Services.AddScoped<ICartRepository, CartRepository>();//added repository 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBcontext>(Options => { Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });
 builder.Services.AddIdentity<Customer,IdentityRole>().AddEntityFrameworkStores<ApplicationDBcontext>();

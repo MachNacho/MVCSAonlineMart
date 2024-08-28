@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC7AD01E-7DFC-4CF2-A1C7-A5156268C3C1}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AC7AD01E-7DFC-4CF2-A1C7-A5156268C3C1}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|c:\\users\\asiph\\desktop\\itehaproject\\saonlinemart\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D97F7CED-53D4-47F9-9A9A-554B9AF978A3}|SAonlineMart\\SAonlineMart.csproj|solutionrelative:saonlinemart\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 179,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\Cart\\Index.cshtml",
-              "RelativeDocumentMoniker": "SAonlineMart\\Views\\Cart\\Index.cshtml",
-              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\Cart\\Index.cshtml",
-              "RelativeToolTip": "SAonlineMart\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEMAAABiAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "SAonlineMart\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Controllers\\CartController.cs",
+              "RelativeToolTip": "SAonlineMart\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBkAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T20:49:12.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "SAonlineMart\\Views\\Order\\Details.cshtml",
+              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "SAonlineMart\\Views\\Order\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T22:27:26.18Z",
+              "WhenOpened": "2024-08-28T20:47:17.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "SAonlineMart\\Views\\Order\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "SAonlineMart\\Views\\Order\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-28T16:44:24.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "SAonlineMart\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\asiph\\Desktop\\ITEHAproject\\SAonlineMart\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "SAonlineMart\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T16:28:13.496Z",
               "EditorCaption": ""
             }
           ]

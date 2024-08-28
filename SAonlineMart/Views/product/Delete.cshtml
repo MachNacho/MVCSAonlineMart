@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Product>
+<h1>Delete</h1>
+<form method="post" asp-action="Delete">
+	<select class="form-control" name="id" id="id">
+		@foreach (var item in Model)
+		{	
+			<option value="@item.ID">--@item.ID - @item.productName--</option>
+		}
+	</select>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
