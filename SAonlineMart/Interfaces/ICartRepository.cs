@@ -3,7 +3,7 @@ namespace SAonlineMart.Interfaces
 {
     public interface ICartRepository
     {
-        Task<IEnumerable<cartItems>> GetAll();
+        Task<IEnumerable<cartItems>> GetAll(string userID);
         bool Add(int Pid,string userid);
         bool PlusOne(int id);
         bool MinusOne(int id);

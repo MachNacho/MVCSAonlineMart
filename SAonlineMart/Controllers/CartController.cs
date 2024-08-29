@@ -7,6 +7,7 @@ using SAonlineMart.Data;
 using SAonlineMart.Interfaces;
 using SAonlineMart.Models;
 using SAonlineMart.Repository;
+using SAonlineMart.ViewModels;
 
 
 namespace SAonlineMart.Controllers
@@ -15,16 +16,49 @@ namespace SAonlineMart.Controllers
     public class CartController : Controller
     {
         private readonly ICartRepository _cartRepository;
-        public CartController(ICartRepository cartRepository)
+        private readonly ApplicationDBcontext _context;
+        public CartController(ICartRepository cartRepository,ApplicationDBcontext context)
         {
+            _context = context;
             _cartRepository = cartRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            IEnumerable<cartItems> cartItems = await _cartRepository.GetAll();
-            return View(cartItems.Where(x => x.customerID == User.Identity.GetUserId()));
+            IEnumerable<cartItems> cartItems = await _cartRepository.GetAll(User.Identity.GetUserId());
+            return View(cartItems);
         }
+        [HttpGet]
+        public async Task<IActionResult> Checkout() 
+        {
+            var cartitems = await _cartRepository.GetAll(User.Identity.GetUserId());
+
+			var response = new Order() 
+            { 
+                customerID = User.Identity.GetUserId(),
+                OrdersItems = new List<OrderItems>()
+			};
+            foreach(var item in cartitems) 
+            {
+                var orderitems = new OrderItems
+                {
+                    Name = item.product.productName,
+                    Price = item.product.productPrice,
+                    Quantity = item.quantity,
+                    Order = response
+                };
+                response.OrdersItems.Add(orderitems);
+            }
+
+            _context.order.Add(response);
+            _context.cartitems.RemoveRange(cartitems);
+            _context.SaveChanges();
+			return View(response); 
+        }
+
+        //[HttpPost]
+       //public async Task<IActionResult> Checkout(OrderViewModel orderViewModel) {  return View(); }
+
 
         [HttpPost]
         public IActionResult Add(int productId) 

@@ -24,9 +24,10 @@ namespace SAonlineMart.Repository
             return Save();
         }
 
-        public async Task<IEnumerable<cartItems>> GetAll() //retirve all
+        public async Task<IEnumerable<cartItems>> GetAll(string userID) //retirve all
         {
-            return await _context.cartitems.Include(a => a.product).ToListAsync();
+            return await _context.cartitems.Where(x => x.customerID == userID).
+                Include(a => a.product).ToListAsync();
         }
 
         public bool MinusOne(int id)

@@ -20,17 +20,11 @@ namespace SAonlineMart.Controllers
             var orders = await _context.order.Where(x => x.customerID == User.Identity.GetUserId()).ToListAsync();
             return View(orders);
         }
+        [HttpGet]
         public async Task<IActionResult> Details(int id) 
         {
-            IEnumerable<OrderItems> Items = await _context.orderItems.Where(x => x.OrderID == id).ToListAsync();
-			return View();
-        }
-        public async Task<IActionResult> Create() 
-        {
-			IEnumerable<cartItems> cart = await _cartRepository.GetAll();
-            cart = cart.Where(x => x.customerID == User.Identity.GetUserId());
-
-            return
+			var order = await _context.order.Include(x=>x.OrdersItems).FirstOrDefaultAsync(x => x.Id == id);
+			return View(order);
         }
     }
 }
