@@ -14,8 +14,8 @@ namespace SAonlineMart.Models
         public DateTime ProdcutUpload { get; set; } = DateTime.Now;
         public ICollection<OrderItems> OrdersItems { get; set; }
         public string? address { get; set; }
-        public int? cvv { get; set; }
-        public int? cardNumber { get; set; }
+        public string? cvv { get; set; }
+        public string? cardNumber { get; set; }
         public DateOnly? expdate { get; set; }
     }
 }

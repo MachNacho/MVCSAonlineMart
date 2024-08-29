@@ -1,1 +1,44 @@
-﻿<h1>Checkout</h1>
+﻿@using SAonlineMart.ViewModels
+@model OrderViewModel
+<div class="row">
+	<div class="col-sm-6 offset-3">
+		<h2>Checkout</h2>
+		@if (TempData["Error"] != null)
+		{
+			<div class="col-md-12 alert alert-danger">
+				<span><b>Sorry!</b> - @TempData["Error"]</span>
+			</div>
+		}
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<form asp-action="Checkout">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<div class="form-group">
+						<label asp-for="address" class="control-label"></label>
+						<input asp-for="address" class="form-control" />
+						<span asp-validation-for="address" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="cardNumber" class="control-label"></label>
+						<input asp-for="cardNumber" class="form-control" />
+						<span asp-validation-for="cardNumber" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="cvv" class="control-label"></label>
+						<input asp-for="cvv" class="form-control" />
+						<span asp-validation-for="cvv" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="expdate" class="control-label"></label>
+						<input asp-for="expdate" class="form-control" />
+						<span asp-validation-for="expdate" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<input class="btn btn-outline-success float-end right" type="submit" value="Log in" />
+						<a class="btn btn-outline-secondary" asp-controller="product" asp-action="Index">Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

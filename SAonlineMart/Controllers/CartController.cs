@@ -28,14 +28,25 @@ namespace SAonlineMart.Controllers
             IEnumerable<cartItems> cartItems = await _cartRepository.GetAll(User.Identity.GetUserId());
             return View(cartItems);
         }
-        [HttpGet]
-        public async Task<IActionResult> Checkout() 
+
+        public IActionResult Checkout() 
         {
-            var cartitems = await _cartRepository.GetAll(User.Identity.GetUserId());
+            var response = new OrderViewModel();
+            return View(response);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Checkout(OrderViewModel viewModel) 
+        {
+			if (!ModelState.IsValid) return View(viewModel);
+			var cartitems = await _cartRepository.GetAll(User.Identity.GetUserId());
 
 			var response = new Order() 
             { 
                 customerID = User.Identity.GetUserId(),
+                address = viewModel.address,
+                cvv = viewModel.cvv,
+                expdate = viewModel.expdate,
+                cardNumber = viewModel.cardNumber,
                 OrdersItems = new List<OrderItems>()
 			};
             foreach(var item in cartitems) 
@@ -45,16 +56,16 @@ namespace SAonlineMart.Controllers
                     Name = item.product.productName,
                     Price = item.product.productPrice,
                     Quantity = item.quantity,
-                    Order = response
+                    Order = response           
                 };
                 response.OrdersItems.Add(orderitems);
             }
 
-            _context.order.Add(response);
-            _context.cartitems.RemoveRange(cartitems);
-            _context.SaveChanges();
-			return View(response); 
-        }
+			 _context.order.Add(response);
+			_context.cartitems.RemoveRange(cartitems);
+			 _context.SaveChanges();
+			return RedirectToAction("Index","Order");
+		}
 
         //[HttpPost]
        //public async Task<IActionResult> Checkout(OrderViewModel orderViewModel) {  return View(); }
