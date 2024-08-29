@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using SAonlineMart.Data;
 using SAonlineMart.Interfaces;
 using SAonlineMart.Models;
+using Azure;
+using System.Collections.Generic;
 
 namespace SAonlineMart.Repository
 {
@@ -45,9 +47,9 @@ namespace SAonlineMart.Repository
             return update(p);
 
         }
-        public bool RemoveALL(string userID) 
+        public bool RemoveALL(IEnumerable<cartItems> i) 
         {
-            _context.cartitems.RemoveRange(_context.cartitems.Where(x => x.customerID ==userID));
+            _context.cartitems.RemoveRange(i);
             return Save();
         }
         public bool PlusOne(int id)
@@ -71,7 +73,7 @@ namespace SAonlineMart.Repository
         }
         public bool Delete(cartItems cartItems)
         {
-            _context.Remove(cartItems);
+            _context.RemoveRange(cartItems);
             return Save();
         }
 
@@ -84,6 +86,11 @@ namespace SAonlineMart.Repository
         public bool update(cartItems cartItems)
         {
             _context.cartitems.Update(cartItems);
+            return Save();
+        }
+        public bool CompleteCheckout(Order o) 
+        {
+            _context.order.Add(o);
             return Save();
         }
     }

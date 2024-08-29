@@ -62,8 +62,8 @@ namespace SAonlineMart.Controllers
             }
 
 			 _context.order.Add(response);
-			_context.cartitems.RemoveRange(cartitems);
-			 _context.SaveChanges();
+            _cartRepository.CompleteCheckout(response);
+            _cartRepository.RemoveALL(cartitems);
 			return RedirectToAction("Index","Order");
 		}
 
@@ -99,9 +99,10 @@ namespace SAonlineMart.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public IActionResult RemoveAll()
+        public async Task<IActionResult> RemoveAll()
         {
-            _cartRepository.RemoveALL(User.Identity.GetUserId());
+            
+            _cartRepository.RemoveALL( await _cartRepository.GetAll(User.Identity.GetUserId()));
             return RedirectToAction("Index");
         }
     }

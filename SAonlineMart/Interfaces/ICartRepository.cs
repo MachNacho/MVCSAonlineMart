@@ -8,7 +8,8 @@ namespace SAonlineMart.Interfaces
         bool PlusOne(int id);
         bool MinusOne(int id);
         public bool RemoveOne(int id);
-        public bool RemoveALL(string userID);
+        public bool RemoveALL(IEnumerable<cartItems> i);
+        public bool CompleteCheckout(Order o);
         bool Delete(cartItems cartItems);
         bool update(cartItems cartItems);
         bool Save();
