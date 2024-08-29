@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SAonlineMart.Models
@@ -13,5 +13,9 @@ namespace SAonlineMart.Models
 		[DataType(DataType.Date)]
         public DateTime ProdcutUpload { get; set; } = DateTime.Now;
         public ICollection<OrderItems> OrdersItems { get; set; }
+        public string? address { get; set; }
+        public int? cvv { get; set; }
+        public int? cardNumber { get; set; }
+        public DateOnly? expdate { get; set; }
     }
 }
