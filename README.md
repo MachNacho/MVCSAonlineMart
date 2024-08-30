@@ -22,6 +22,7 @@ Welcome to my ITEHA assignment. This assignment is an e-commerce website called:
 ```
 
 This will ensure that there is a connection to the Database
+
 3. [Migration help](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) Use the guide if lost.
 Run the update database command to allow for creation of tables in the database.
 
