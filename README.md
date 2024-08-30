@@ -12,7 +12,7 @@ Welcome to my ITEHA assignment. This assignment is an e-commerce website called:
 ## Prerequisites
 - Microsoft SQL server
 
-# setup
+## setup
 1. Click on the solution to load the project
 2. Open the appsettings.json file, and paste this into the file
 ```json
