@@ -74,6 +74,7 @@ namespace SAonlineMart.Controllers
         [HttpPost]
         public IActionResult Add(int productId) 
         {
+            if(User.Identity.GetUserId() == null){return RedirectToAction("Login","Account");;}
             _cartRepository.Add(productId, User.Identity.GetUserId());
             return RedirectToAction("Index");
         }
