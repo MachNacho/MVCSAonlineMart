@@ -7,6 +7,40 @@ namespace SAonlineMart.Data
 {
     public class Seed
     {
+              public static void SeedData(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<ApplicationDBcontext>();
+
+                context.Database.EnsureCreated();
+
+                if (!context.product.Any())
+                {
+                    context.product.AddRange(new List<Product>()
+                    {
+                        new Product()
+                        {
+                            productPrice =219,
+                            productCategory =ProductCategory.Fashion,
+                            productDescription="A great dress",
+                            productName = "Dress",
+                            imageURL = "https://i0.wp.com/equilibrio.co.za/wp-content/uploads/2024/02/Erre-Fold-Wrap-Dress-Midi-Olive-8.webp?fit=1200%2C1800&ssl=1"
+                        }, 
+                        new Product()
+                        {
+                            productName="T-shirt",
+                            productDescription="A great shirt",
+                            productCategory=ProductCategory.Fashion,
+                            productPrice=3900,
+                            imageURL="https://bonblom.co.za/wp-content/uploads/2022/04/mens-tshirt-1.jpg"
+                        },
+                                                               
+                    });
+                    context.SaveChanges();
+                }           
+            }
+        }
         public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
