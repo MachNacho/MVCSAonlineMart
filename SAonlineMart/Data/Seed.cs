@@ -35,7 +35,15 @@ namespace SAonlineMart.Data
                             productPrice=3900,
                             imageURL="https://bonblom.co.za/wp-content/uploads/2022/04/mens-tshirt-1.jpg"
                         },
-                                                               
+                        new Product()
+                        {
+                            productName="Love South Africa - Mens - Hoodie - Grey",
+                            productDescription="AdultsSlim Cuts - Recommended to take 1 size bigger than your T.Shirt SizeThin Fleece MaterialPolyester and Cotton BlendHooded JacketOpen front pocket pouchUnisex Cut Size Small-2Xl What's in the box 1 x Printed Hoodie",
+                            productCategory=ProductCategory.Fashion,
+                            productPrice=100,
+                            imageURL="https://media.takealot.com/covers_tsins/59254985/59254985-1-list.jpeg"
+                        },
+
                     });
                     context.SaveChanges();
                 }           
