@@ -11,6 +11,7 @@ Welcome to my ITEHA assignment. This assignment is an e-commerce website called:
 # How to get started
 ## Prerequisites
 - Microsoft SQL server
+- Visual studio or visual studio code
 
 ## setup
 1. Click on the solution to load the project
