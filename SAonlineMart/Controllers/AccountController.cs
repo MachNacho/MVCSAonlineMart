@@ -27,14 +27,14 @@ namespace SAonlineMart.Controllers
 		[HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)//Used for logging in
 		{
-			if(!ModelState.IsValid) return View(model);
-			var user = await _userManager.FindByEmailAsync(model.EmailAddress);
+			if(!ModelState.IsValid) return View(model);// checks if inputted data matches the rules set on view model
+			var user = await _userManager.FindByEmailAsync(model.EmailAddress);// checks if there is a similar email in the DB
 			if (user != null)
 			{
-				var PasswordCheck = await _userManager.CheckPasswordAsync(user, model.Password);
+				var PasswordCheck = await _userManager.CheckPasswordAsync(user, model.Password);// checks if user and input have the same password
 				if (PasswordCheck)
 				{
-					var result = await _signInManager.PasswordSignInAsync(user, model.Password, true,false);
+					var result = await _signInManager.PasswordSignInAsync(user, model.Password, true,false);//signs user in
 					if (result.Succeeded)
 					{
 						return RedirectToAction("Index","Product");
@@ -47,7 +47,7 @@ namespace SAonlineMart.Controllers
 			return View(model);
 		}
 
-		public IActionResult Register() { var response = new RegisterViewModel(); return View(response); }
+		public IActionResult Register() { var response = new RegisterViewModel(); return View(response); }// sets up the form with the rules
 		[HttpPost]
 		public async Task<IActionResult> Register(RegisterViewModel model) 
 		{
@@ -57,7 +57,7 @@ namespace SAonlineMart.Controllers
 				TempData["Error"] = "This email address already in use";
 				return View(model);
 			}
-			var newcustomer = new Customer()
+			var newcustomer = new Customer()// create new user with inputted data
 			{
 				FirstName = model.Firstname,
 				LaststName = model.Lastname,
@@ -66,7 +66,7 @@ namespace SAonlineMart.Controllers
 				UserName = $"{model.Firstname}_{model.Lastname}"
 			};
 			var newUserResponse = await _userManager.CreateAsync(newcustomer,model.Password);//create user
-			if (newUserResponse.Succeeded) { await _userManager.AddToRoleAsync(newcustomer, UserRoles.User); }//add a role
+			if (newUserResponse.Succeeded) { await _userManager.AddToRoleAsync(newcustomer, UserRoles.User); }//add a user role
 			return RedirectToAction("Login", "Account");
 		}
 
