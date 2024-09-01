@@ -11,19 +11,19 @@ namespace SAonlineMart.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly ApplicationDBcontext _context;
-        private readonly ICartRepository _cartRepository;
-        public OrderController( ApplicationDBcontext context, ICartRepository cartRepository) {  _context = context; _cartRepository = cartRepository; }
+
+        private readonly IOrderRepository _orderRepository;
+        public OrderController(IOrderRepository orderRepository) {   _orderRepository = orderRepository; }
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var orders = await _context.order.Where(x => x.customerID == User.Identity.GetUserId()).ToListAsync();
+            var orders = await _orderRepository.GetAll(User.Identity.GetUserId());
             return View(orders);
         }
         [HttpGet]
         public async Task<IActionResult> Details(int id) 
         {
-			var order = await _context.order.Include(x=>x.OrdersItems).FirstOrDefaultAsync(x => x.Id == id);
+			var order = await _orderRepository.GetByIdAsync(id);
 			return View(order);
         }
     }

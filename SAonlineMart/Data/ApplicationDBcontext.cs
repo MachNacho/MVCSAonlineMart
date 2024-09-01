@@ -6,7 +6,7 @@ namespace SAonlineMart.Data
 {
 	public class ApplicationDBcontext : IdentityDbContext<Customer>
     {
-        public ApplicationDBcontext(DbContextOptions<ApplicationDBcontext> Options):base(Options)
+        public ApplicationDBcontext(DbContextOptions<ApplicationDBcontext> Options):base(Options)//creates the db and sets the tables
         {
         }
         public DbSet<Product> product { get; set; }

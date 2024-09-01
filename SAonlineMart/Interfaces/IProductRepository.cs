@@ -7,7 +7,7 @@ using SAonlineMart.Models;
 
 namespace SAonlineMart.Interfaces
 {
-    public interface IProductRepository
+    public interface IProductRepository//interface for product
     {
         Task<IEnumerable<Product>> GetALL();
         Task<IEnumerable<Product>> GetALLbyDate();

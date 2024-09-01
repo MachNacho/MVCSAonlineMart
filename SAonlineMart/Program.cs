@@ -9,16 +9,17 @@ using SAonlineMart.Repository;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IProductRepository, ProductRepository>();//added repository 
-builder.Services.AddScoped<ICartRepository, CartRepository>();//added repository 
+builder.Services.AddScoped<IProductRepository, ProductRepository>();//added repository service
+builder.Services.AddScoped<ICartRepository, CartRepository>();//added repository service
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();//added repository service
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDBcontext>(Options => { Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });
+builder.Services.AddDbContext<ApplicationDBcontext>(Options => { Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });//add service to auto connect to db view address
 builder.Services.AddIdentity<Customer,IdentityRole>().AddEntityFrameworkStores<ApplicationDBcontext>();
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 var app = builder.Build();
-if (args.Length == 1 && args[0].ToLower() == "seeddata")
+if (args.Length == 1 && args[0].ToLower() == "seeddata")// allows for test data to be loaded with command
 {
     await Seed.SeedUsersAndRolesAsync(app);
 }

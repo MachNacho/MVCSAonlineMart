@@ -1,7 +1,7 @@
 ﻿using SAonlineMart.Models;
 namespace SAonlineMart.Interfaces
 {
-    public interface ICartRepository
+    public interface ICartRepository//interface for repository
     {
         Task<IEnumerable<cartItems>> GetAll(string userID);
         bool Add(int Pid,string userid);
