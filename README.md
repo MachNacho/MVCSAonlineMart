@@ -1,5 +1,4 @@
 # Welcome
-Welcome to my ITEHA assignment. This assignment is an e-commerce website called: SA Online Mart.
 
 # Features
 - Cart functionality
