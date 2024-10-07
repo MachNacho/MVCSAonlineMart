@@ -1,4 +1,3 @@
-# My ITEHA assignment
 # Welcome
 Welcome to my ITEHA assignment. This assignment is an e-commerce website called: SA Online Mart.
 
